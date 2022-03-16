@@ -10,7 +10,6 @@ class Details extends React.Component {
       title: '',
       price: '',
       thumbnail: '',
-      id: '',
       products: [],
     };
   }
@@ -27,7 +26,6 @@ class Details extends React.Component {
       title: item.title,
       price: item.price,
       thumbnail: item.thumbnail,
-      id: item.id,
       products: item,
     });
   }
@@ -38,7 +36,8 @@ class Details extends React.Component {
   }
 
   render() {
-    const { title, price, thumbnail, id } = this.state;
+    const { title, price, thumbnail } = this.state;
+    const { match: { params: { id } } } = this.props;
     return (
       <div>
         <div data-testid="product-detail-name">
