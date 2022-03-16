@@ -24,10 +24,8 @@ class FormReview extends Component {
   }
 
   getRatings = () => {
-    const { id } = this.props;
     const ratings = JSON.parse(localStorage.getItem('evaluations') || '[]');
-    const isRate = ratings.filter((storage) => storage.id === id);
-    this.setState({ evaluations: isRate });
+    this.setState({ evaluations: ratings });
   }
 
   saveRating = (event) => {
